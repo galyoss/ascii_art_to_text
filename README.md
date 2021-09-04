@@ -1,9 +1,18 @@
+ #ascii to text
+ 
     / \  / ___| / ___|_ _|_ _| |_   _/ _ \  
    / _ \ \___ \| |    | | | |    | || | | | 
   / ___ \ ___) | |___ | | | |    | || |_| | 
  /_/   \_\____/ \____|___|___|   |_| \___/       TEXT
                                             
 Written by Gal Yossifov
+
+Run Instructions:
+Run the command
+
+```
+mvn compile exec:java -Dexec.mainClass="Exec" -Dexec.args="<file_to_parse>, <optional: special config file>" 
+```
 
 General Instructions:
 This program translates Text files including numbers written in ascii art, to normal readable text.
@@ -21,9 +30,4 @@ The Default input specs are:
  _|
  ```
 
-Run Instructions:
-Run the command
 
-```
-mvn compile exec:java -Dexec.mainClass="Exec" -Dexec.args="<file_to_parse>, <optional: special config file>" 
-```
