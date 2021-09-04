@@ -11,14 +11,6 @@ The Default input specs are:
  For generic use, I've added an option to re-config the dictionary from ascii-art to numbers and symbols.
  if you use a special config file, please notice the format: first line is for the string value to be filled, followed by 3 lines including the ascii art.
  ```
- 1
-   
-  |
-  |
-2
- _ 
- _|
-|_ 
 3
  _ 
  _|
