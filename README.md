@@ -1,4 +1,8 @@
-# ascii_art_to_text
+#    / \  / ___| / ___|_ _|_ _| |_   _/ _ \  
+   / _ \ \___ \| |    | | | |    | || | | | 
+  / ___ \ ___) | |___ | | | |    | || |_| | 
+ /_/   \_\____/ \____|___|___|   |_| \___/       TEXT
+                                            
 Written by Gal Yossifov
 
 General Instructions:
