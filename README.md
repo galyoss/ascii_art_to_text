@@ -13,4 +13,7 @@ The Default input specs are:
 
 Run Instructions:
 Run the command
+
+```
 mvn compile exec:java -Dexec.mainClass="Exec" -Dexec.args="<file_to_parse>, <optional: special config file>" 
+```
