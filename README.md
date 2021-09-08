@@ -11,10 +11,14 @@
 Written by Gal Yossifov
 
 Run Instructions:
-Download the repository and Run the command
+* Download the repository
+
+* place the desired file to be translated into the main folder (together with target and src dirs)
+
+* Run the command
 
 ```
-mvn compile exec:java -Dexec.mainClass="Exec" -Dexec.args="<file_to_parse>, <optional: special config file>" 
+mvn compile exec:java -Dexec.mainClass="Exec" -Dexec.args="<file_to_parse>, <optional: special_config_file>" 
 ```
 
 General Instructions:
