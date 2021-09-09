@@ -46,7 +46,7 @@ public class Exec {
 
     }
 
-    public static HashMap<String, String> parseConfigFile(ArrayList<String> configInfo) {
+    private static HashMap<String, String> parseConfigFile(ArrayList<String> configInfo) {
         //This method gets as input path to config file,reads the file and returns a dictionary from ascii-art to value
 
         HashMap<String, String> dict = new HashMap<>();
@@ -58,7 +58,7 @@ public class Exec {
         return dict;
     }
 
-    public static boolean checkTextFile(ArrayList<String> fileData) {
+    private static boolean checkTextFile(ArrayList<String> fileData) {
         //This method goes over the files and checks for any structure problems or contract violations. return True if test passed.
         for (int i=0;i<fileData.size();i++)
             if (fileData.get(i).length()!=27)
@@ -66,13 +66,13 @@ public class Exec {
         return true;
     }
 
-    public static void cleanExcessEnters(ArrayList<String> fileData) {
+    private static void cleanExcessEnters(ArrayList<String> fileData) {
         //This function receives the file data and removes the empty strings (matching to the empty lines in the txt file)
         while (fileData.contains(""))
             fileData.remove("");
     }
 
-    public static String parseNextLine(ArrayList<String> fileData, HashMap<String, String> AsciiArtValueDict) {
+    private static String parseNextLine(ArrayList<String> fileData, HashMap<String, String> AsciiArtValueDict) {
         //This method parses the next 3 lines (i.e Ascii-art "block") and returns a matching string.
         String[] lines = new String[]{fileData.remove(0), fileData.remove(0), fileData.remove(0)};
         StringBuilder stringBuilder = new StringBuilder();
@@ -82,22 +82,17 @@ public class Exec {
         return res.contains("?") ? res + " ILLEGAL" : res;
     }
 
-    public static String getNextChar(String[] lines, HashMap<String, String> AsciiArtValueDict) {
+    private static String getNextChar(String[] lines, HashMap<String, String> AsciiArtValueDict) {
         //This method takes the 3 line strings, removes the first 3 chars of each line, and returns the matching character they represent in ascii-art.
-        try {
             String letter = lines[0].substring(0, 3) + lines[1].substring(0, 3) + lines[2].substring(0, 3);
             for (int i = 0; i < 3; i++)
                 lines[i] = lines[i].substring(3);
             String res = AsciiArtValueDict.get(letter);
             return res != null ? res : "?";
-        } catch (Exception e) {
-            System.out.println("error in processing text file");
-            System.exit(1);
-        }
-        return "";
+
     }
 
-    public static ArrayList<String> readFile(String path) {
+    private static ArrayList<String> readFile(String path) {
         //This method receives path to txt file, and returns an arraylist of strings, each string represents a line in the txt file.
         ArrayList<String> res = new ArrayList<>();
         try {
