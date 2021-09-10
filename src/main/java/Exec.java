@@ -46,6 +46,7 @@ public class Exec {
 
     }
 
+
     private static HashMap<String, String> parseConfigFile(ArrayList<String> configInfo) {
         //This method gets as input path to config file,reads the file and returns a dictionary from ascii-art to value
 
@@ -92,21 +93,16 @@ public class Exec {
 
     }
 
-    private static ArrayList<String> readFile(String path) {
+    private static ArrayList<String> readFile(String path) throws Exception{
         //This method receives path to txt file, and returns an arraylist of strings, each string represents a line in the txt file.
         ArrayList<String> res = new ArrayList<>();
-        try {
-            File file = new File(path);
-            Scanner myReader = new Scanner(file);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                res.add(data);
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Couldn't find file. Please make sure file path is correct.");
-            System.exit(1);
+        File file = new File(path);
+        Scanner myReader = new Scanner(file);
+        while (myReader.hasNextLine()) {
+            String data = myReader.nextLine();
+            res.add(data);
         }
+        myReader.close();
         return res;
     }
 }
